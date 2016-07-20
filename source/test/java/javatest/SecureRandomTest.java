@@ -10,6 +10,8 @@ import java.security.SecureRandom;
 /*
  * References:
  *
+ * - https://gist.github.com/buzztaiki/ca89a079b093d716ef94
+ * - https://docs.oracle.com/cd/E13209_01/wlcp/wlss30/configwlss/jvmrand.html
  * - https://docs.oracle.com/javase/8/docs/api/java/security/SecureRandom.html
  * - https://docs.oracle.com/javase/8/docs/technotes/guides/security/StandardNames.html#SecureRandom
  */
