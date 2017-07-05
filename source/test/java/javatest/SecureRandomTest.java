@@ -1,3 +1,4 @@
+
 package javatest;
 
 import org.junit.BeforeClass;
@@ -28,24 +29,24 @@ public class SecureRandomTest {
         printSystemProperty("java.vm.version");
     }
 
-    private static void printSystemProperty(String aPropertyName) {
+    private static void printSystemProperty(final String aPropertyName) {
         System.out.printf("%s=%s%n", aPropertyName, System.getProperty(aPropertyName));
     }
 
-    private void test00(String anAlgorithmName) {
-        String aConstructionMethod = "SecureRandom.getInstance(\"" + anAlgorithmName + "\")";
+    private void test00(final String anAlgorithmName) {
+        final String aConstructionMethod = "SecureRandom.getInstance(\"" + anAlgorithmName + "\")";
         try {
             test0(aConstructionMethod, SecureRandom.getInstance(anAlgorithmName));
-        } catch(NoSuchAlgorithmException e) {
+        } catch (final NoSuchAlgorithmException e) {
             System.out.printf("method = `%s` => algorithm = %s; failed to construct, cause = %s%n", aConstructionMethod, anAlgorithmName, e.toString());
         }
     }
 
-    private void test0(String aConstructionMethod, SecureRandom aSecureRandom) {
-        long s = System.currentTimeMillis();
+    private void test0(final String aConstructionMethod, final SecureRandom aSecureRandom) {
+        final long s = System.currentTimeMillis();
         aSecureRandom.nextInt();
-        long e = System.currentTimeMillis();
-        long d = e - s;
+        final long e = System.currentTimeMillis();
+        final long d = e - s;
         System.out.printf("method = `%s` => algorithm = %s, duration of `nextInt` = %d (ms)%n", aConstructionMethod, aSecureRandom.getAlgorithm(), d);
     }
 
@@ -54,13 +55,12 @@ public class SecureRandomTest {
         test0("new SecureRandom()", new SecureRandom());
     }
 
-
     @Test
     public void test2_strong() {
-        String aConstructionMethod = "SecureRandom.getInstanceStrong()";
+        final String aConstructionMethod = "SecureRandom.getInstanceStrong()";
         try {
             test0(aConstructionMethod, SecureRandom.getInstanceStrong());
-        } catch (NoSuchAlgorithmException e) {
+        } catch (final NoSuchAlgorithmException e) {
             System.out.printf("method = `%s` => failed to construct, cause = %s%n", aConstructionMethod, e.toString());
         }
     }

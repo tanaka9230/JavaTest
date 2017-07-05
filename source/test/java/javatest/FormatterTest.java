@@ -1,11 +1,12 @@
+
 package javatest;
 
 import static org.junit.Assert.assertEquals;
 //import java.util.Formatter;
 import org.junit.Test;
 
-public class FormatterTest
-{
+@SuppressWarnings("boxing")
+public class FormatterTest {
     @Test
     public void test_string_default() {
         assertEquals("ab 123 あいう 123", String.format("%1$s %2$s %3$s %2$s", "ab", "123", "あいう"));

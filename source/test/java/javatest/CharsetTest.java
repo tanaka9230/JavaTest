@@ -1,11 +1,12 @@
+
 package javatest;
 
 import static org.junit.Assert.assertEquals;
-import java.nio.charset.Charset;
 import org.junit.Test;
+import java.nio.charset.Charset;
 
-public class CharsetTest
-{
+public class CharsetTest {
+
     // system's default
 
     @Test

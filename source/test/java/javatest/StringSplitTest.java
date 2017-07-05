@@ -1,13 +1,13 @@
+
 package javatest;
 
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
-public class StringSplitTest
-{
+public class StringSplitTest {
     @Test
     public void test_1() {
-        String[] s = "a, b ,  c  ,, ,,, , d ".split("\\,");
+        final String[] s = "a, b ,  c  ,, ,,, , d ".split("\\,");
         assertEquals(9, s.length);
         assertEquals("a", s[0]);
         assertEquals(" b ", s[1]);
